@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MadhuriPortfolio.Models.Certification>
+
+@{
+    ViewData["Title"] = "Certifications";
+}
+
+<section class="certifications">
+    <h2>Certifications</h2>
+    <ul>
+        @foreach (var certification in Model)
+        {
+            <li>
+                <h3>@certification.Title</h3>
+                <p>@certification.Institution</p>
+                <p>@certification.Description</p>
+            </li>
+        }
+    </ul>
+</section>

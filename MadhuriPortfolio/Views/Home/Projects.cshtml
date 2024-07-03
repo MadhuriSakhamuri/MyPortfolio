@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MadhuriPortfolio.Models.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<section class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+        @foreach (var project in Model)
+        {
+            <div class="project-item">
+                <h3>@project.Title</h3>
+                <p>@project.Description</p>
+                <a href="@project.Link" target="_blank" class="button">View on GitHub</a>
+            </div>
+        }
+    </div>
+</section>
