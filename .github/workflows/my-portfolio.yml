@@ -17,7 +17,7 @@ jobs:
     - name: Set up .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '7.0.x'
+        dotnet-version: '8.0.x'
       # This sets up the .NET environment. Replace '7.0.x' with the version your project requires.
 
     - name: Restore dependencies
