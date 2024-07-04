@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MadhuriPortfolio.Models.Skill>
+
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<section class="skills">
+    <h2>Skills</h2>
+    <ul>
+        @foreach (var skill in Model)
+        {
+            <li>
+                <p>@skill.Name</p>
+            </li>
+        }
+    </ul>
+</section>

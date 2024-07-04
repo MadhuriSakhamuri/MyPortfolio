@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MadhuriPortfolio.Models.Experience>
+
+@{
+    ViewData["Title"] = "Experience";
+}
+
+<section class="experience">
+    <h2>Experience</h2>
+    <ul>
+        @foreach (var experience in Model)
+        {
+            <li>
+                <h3>@experience.Title</h3>
+                <p>@experience.Company, @experience.Location</p>
+                <p><strong>Date:</strong> @experience.Date</p>
+                <p>@experience.Description</p>
+            </li>
+        }
+    </ul>
+</section>
