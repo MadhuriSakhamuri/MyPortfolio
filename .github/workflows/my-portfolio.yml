@@ -1,0 +1,43 @@
+name: Build and Deploy MyPortfolio
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      # This step checks out your repository code using the checkout action.
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+      # This step sets up the .NET environment using the specified version.
+      # Replace '5.0.x' with the specific .NET version your project requires.
+
+    - name: Restore dependencies
+      run: dotnet restore
+      # This step restores the project's dependencies.
+
+    - name: Build
+      run: dotnet build --configuration Release
+      # This step builds the project in Release configuration.
+
+    - name: Publish
+      run: dotnet publish -c Release -o out
+      # This step publishes the application to the 'out' directory.
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+      # This step deploys the application to GitHub Pages using the 'peaceiris/actions-gh-pages' action.
+      # 'github_token' is a secret that GitHub automatically provides to authenticate the action.
+      # 'publish_dir' specifies the directory containing the published output.
