@@ -21,15 +21,15 @@ jobs:
       # This sets up the .NET environment. Replace '7.0.x' with the version your project requires.
 
     - name: Restore dependencies
-      run: dotnet restore ./MyPortfolio/MyPortfolio.csproj
+      run: dotnet restore ./MadhuriPortfolio/MadhuriPortfolio.csproj
       # This restores the project's dependencies.
 
     - name: Build
-      run: dotnet build ./MyPortfolio/MyPortfolio.csproj --configuration Release
+      run: dotnet build ./MadhuriPortfolio/MadhuriPortfolio.csproj --configuration Release
       # This builds the project in Release configuration.
 
     - name: Publish
-      run: dotnet publish ./MyPortfolio/MyPortfolio.csproj -c Release -o out
+      run: dotnet publish ./MadhuriPortfolio/MadhuriPortfolio.csproj -c Release -o out
       # This publishes the application to the 'out' directory.
 
     - name: Deploy to GitHub Pages
