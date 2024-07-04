@@ -36,7 +36,7 @@ jobs:
       run: chmod +x generate-static-files.sh
 
     - name: Generate Static Files
-      run: ./generate-static-files.sh
+      run: ./MadhuriPortfolio/generate-static-files.sh
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
