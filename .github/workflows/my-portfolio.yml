@@ -32,6 +32,12 @@ jobs:
       run: dotnet publish ./MadhuriPortfolio/MadhuriPortfolio.csproj -c Release -o out
       # This publishes the application to the 'out' directory.
 
+    - name: Make script executable
+      run: chmod +x generate-static-files.sh
+
+    - name: Generate Static Files
+      run: ./generate-static-files.sh
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
